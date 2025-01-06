@@ -1,19 +1,21 @@
+// src/components/ContactCard.js
 import React from "react";
-import user from "./images/user.png";
 
-const ContactCard = ({ contact }) => {
+const ContactCard = ({ contact, removeContactHandler }) => {
   return (
-    <div className="item">
-      <img className="ui avatar image" src={user} alt="user" />
-      <div className="content">
-        <div className="header">{contact.name}</div>
-        <div>{contact.email}</div>
+    <div className="bg-gray-100 shadow-md rounded-lg p-4 flex justify-between items-center">
+      <div>
+        <h3 className="text-lg font-semibold text-gray-800">{contact.name}</h3>
+        <p className="text-gray-600">{contact.email}</p>
       </div>
-      <i
-        className="trash alternate outline icon"
-        style={{ color: "red", marginTop: "7px" }}
-      ></i>
+      <button
+        onClick={() => removeContactHandler(contact.id)}
+        className="text-red-500 hover:text-red-700 transition"
+      >
+        Delete
+      </button>
     </div>
   );
 };
+
 export default ContactCard;
