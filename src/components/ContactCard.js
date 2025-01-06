@@ -1,4 +1,3 @@
-// src/components/ContactCard.js
 import React from "react";
 
 const ContactCard = ({ contact, removeContactHandler }) => {
